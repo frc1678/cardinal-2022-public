@@ -5,6 +5,7 @@ import sys
 
 
 def main():
+    print("WARNING!!! Authentication does not exist in this commit history!")
     """Run administrative tasks."""
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'CardinalAPI.settings')
     try:
