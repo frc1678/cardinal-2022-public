@@ -2,6 +2,7 @@ from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
 from rest_framework import permissions
+import json
 
 from cardinal.api import cardinal_data_request
 from .generate_test_data import DataGenerator
@@ -37,7 +38,7 @@ class CollectionDataRequestApiView(APIView):
         if "test" in request.query_params:
             try:
                 file = open(f"cardinal/api/hardcoded_test_data/{collection_name}.json")
-                data = file.read()
+                data = json.loads(file.read())
                 file.close()
             except FileNotFoundError:
                 return Response(
