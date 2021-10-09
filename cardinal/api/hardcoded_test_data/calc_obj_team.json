@@ -1,7 +1,4 @@
 [{
-    "_id": {
-      "$oid": "60a347f02eaffeba84e39190"
-    },
     "auto_avg_balls_high": 3.8381,
     "auto_avg_balls_low": 56.4716,
     "auto_avg_balls_total": 10.4353,
@@ -18,9 +15,6 @@
     "tele_sd_balls_low": 8.9442,
     "tele_sd_balls_high": 2.7654
   },{
-    "_id": {
-      "$oid": "60a4686d8cc1ef40ea774635"
-    },
     "auto_avg_balls_high": 3.8381,
     "auto_avg_balls_low": 56.4716,
     "auto_avg_balls_total": 10.4353,
@@ -37,9 +31,6 @@
     "tele_sd_balls_low": 8.9442,
     "tele_sd_balls_high": 2.7654
   },{
-    "_id": {
-      "$oid": "60a468798cc1ef40ea774636"
-    },
     "auto_avg_balls_high": 3.8381,
     "auto_avg_balls_low": 56.4716,
     "auto_avg_balls_total": 10.4353,
@@ -56,9 +47,6 @@
     "tele_sd_balls_low": 8.9442,
     "tele_sd_balls_high": 2.7654
   },{
-    "_id": {
-      "$oid": "60a4688d8cc1ef40ea774637"
-    },
     "auto_avg_balls_high": 3.8381,
     "auto_avg_balls_low": 56.4716,
     "auto_avg_balls_total": 10.4353,
@@ -75,9 +63,6 @@
     "tele_sd_balls_low": 8.9442,
     "tele_sd_balls_high": 2.7654
   },{
-    "_id": {
-      "$oid": "60a4689a8cc1ef40ea774638"
-    },
     "auto_avg_balls_high": 3.8381,
     "auto_avg_balls_low": 56.4716,
     "auto_avg_balls_total": 10.4353,
@@ -94,9 +79,6 @@
     "tele_sd_balls_low": 8.9442,
     "tele_sd_balls_high": 2.7654
   },{
-    "_id": {
-      "$oid": "60a468a78cc1ef40ea774639"
-    },
     "auto_avg_balls_high": 3.8381,
     "auto_avg_balls_low": 56.4716,
     "auto_avg_balls_total": 10.4353,
@@ -113,9 +95,6 @@
     "tele_sd_balls_low": 8.9442,
     "tele_sd_balls_high": 2.7654
   },{
-    "_id": {
-      "$oid": "60a468b18cc1ef40ea77463a"
-    },
     "auto_avg_balls_high": 3.8381,
     "auto_avg_balls_low": 56.4716,
     "auto_avg_balls_total": 10.4353,

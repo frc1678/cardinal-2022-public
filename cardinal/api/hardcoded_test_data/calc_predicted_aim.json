@@ -1,16 +1,10 @@
 [{
-    "_id": {
-      "$oid": "60a3487b2eaffeba84e39191"
-    },
     "match_number": 1,
     "alliance_color_is_red": true,
     "predicted_score": 422.58142857142855,
     "predicted_rp1": 1,
     "predicted_rp2": 1
   },{
-    "_id": {
-      "$oid": "60a4650053b1a82e6d807067"
-    },
     "match_number": 1,
     "alliance_color_is_red": false,
     "predicted_score": 336.6,

@@ -1,7 +1,4 @@
 [{
-    "_id": {
-      "$oid": "60a349d02eaffeba84e39195"
-    },
     "auto_line": false,
     "climb": true,
     "level_climb": true,

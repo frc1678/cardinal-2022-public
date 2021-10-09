@@ -1,7 +1,4 @@
 [{
-    "_id": {
-      "$oid": "60a349622eaffeba84e39193"
-    },
     "driver_ability": 29.5912,
     "driver_agility": 42.6533,
     "driver_rendezvous_agility": 85.6003,

@@ -1,7 +1,4 @@
 [{
-    "_id": {
-      "$oid": "60a34ac52eaffeba84e39196"
-    },
     "team_number": 691,
     "can_cross_trench": false,
     "drivetrain": 1,

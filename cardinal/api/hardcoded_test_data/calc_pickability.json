@@ -1,7 +1,4 @@
 [{
-    "_id": {
-      "$oid": "60a348bd2eaffeba84e39192"
-    },
     "team_number": 691,
     "predicted_rps": 5,
     "predicted_rank": 4,

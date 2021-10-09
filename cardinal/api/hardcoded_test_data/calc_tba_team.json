@@ -1,7 +1,4 @@
 [{
-    "_id": {
-      "$oid": "60a3498f2eaffeba84e39194"
-    },
     "auto_high_balls_percent_inner": 3.8169,
     "auto_line_successes": 29,
     "climb_all_success_avg_time": 30.7254,
