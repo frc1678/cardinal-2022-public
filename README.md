@@ -40,9 +40,14 @@ There are two main uses for Cardinal. Both involve serving data to the Viewer ap
 	
 # Running
 1. Make sure to finish with setup steps
-2. Start the server
+2.
+- Start the server (test)
 	```
-	python3 manage.py runserver 8001
+	./scripts/testserver.sh
+	```
+- Start the server (production)
+	```
+	./scripts/runserver.sh
 	```
 
 ![2021-09-15_23-59](https://user-images.githubusercontent.com/35516367/133566395-8b683eda-ba8e-4f1d-8362-dabdbd083461.png)
