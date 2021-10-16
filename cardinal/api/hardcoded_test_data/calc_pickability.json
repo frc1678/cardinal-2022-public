@@ -1,8 +1,17 @@
-[{
+[
+  {
     "team_number": 691,
-    "predicted_rps": 5,
-    "predicted_rank": 4,
-    "current_rank": 1,
-    "current_rps": 26,
-    "current_avg_rps": 2.6
-  }]
+    "first_pickability": 79.2763,
+    "second_pickability": 89.7082
+  },
+  {
+    "team_number": 5285,
+    "first_pickability": 65.8291,
+    "second_pickability": 35.0921
+  },
+  {
+    "team_number": 299,
+    "first_pickability": 12.6732,
+    "second_pickability": 45.7432
+  }
+]

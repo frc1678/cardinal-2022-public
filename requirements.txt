@@ -5,3 +5,4 @@ djangorestframework==3.12.4
 pymongo==3.10.1
 PyYAML==5.4.1
 black==21.9b0 
+uritemplate

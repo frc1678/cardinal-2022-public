@@ -14,11 +14,16 @@ COLLECTIONS = [
     "calc_spr",
 ]
 
+
 CONNECTION_STR = (
     'mongodb+srv://server:{}@scouting-system-3das1.gcp.mongodb.net/test?retryWrites=true&w=majority'
 )
 PORT = 27017
+
+
 CLIENT = None
+
+
 DB = None
 
 
