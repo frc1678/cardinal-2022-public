@@ -8,6 +8,7 @@ from .views import (
     SupportedCollectionsApiView,
     MatchScheduleApiView,
     TeamsListApiView,
+    VersionApiView,
     LogFileApiView,
 )
 from django.views.generic import TemplateView
@@ -25,6 +26,7 @@ SchemaView = get_schema_view(
 
 urlpatterns = [
     path("hello/", InitialApiView.as_view()),
+    path("version/", VersionApiView.as_view()),
     url(
         r'^openapi-schema',
         SchemaView,

@@ -7,10 +7,22 @@ import json
 
 from cardinal.api import cardinal_data_request
 from .generate_test_data import DataGenerator
+from .logger import request_logged
+from rest_framework import permissions
+from pathlib import Path
+from cardinal.api import CARDINAL_VERSION
 from .logger import _FILE_PATH, request_logged
 
 
 CARDINAL_EMOJI = "🐦"
+
+
+class VersionApiView(APIView):
+    permission_classes = [permissions.AllowAny]
+
+    @request_logged
+    def get(self, request, *args, **kwargs):
+        return Response(CARDINAL_VERSION, status=status.HTTP_200_OK)
 
 
 class InitialApiView(APIView):
