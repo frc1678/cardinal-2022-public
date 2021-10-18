@@ -50,12 +50,13 @@ There are two main uses for Cardinal. Both involve serving data to the Viewer ap
 	./scripts/runserver.sh
 	```
 
-![2021-09-15_23-59](https://user-images.githubusercontent.com/35516367/133566395-8b683eda-ba8e-4f1d-8362-dabdbd083461.png)
+![image](https://user-images.githubusercontent.com/35516367/137597536-36202b2d-5e95-4113-88c5-ab4b51135fb7.png)
 
 
 # API Usage
 
-![image](https://user-images.githubusercontent.com/35516367/136669436-7c70aa2d-62db-486e-be0f-e5632af51d99.png)
+![image](https://user-images.githubusercontent.com/35516367/137597487-8b4bc918-fc06-423f-987a-86fbe473351c.png)
+
 
 ## Test Data Generator
 ```
@@ -102,7 +103,7 @@ curl -X GET "https://cardinal.citruscircuits.org/cardinal/api/generate/calc_tba_
 	- Fully generate data the view can use to test from this service
 	- Serve test data for Viewer to easily pull using REST standards
 
-#### 4. Serve current competition data <b>(Currently here)</b>
+#### 4. Serve current competition data
 	- Pull data from Mongodb about the current competition
 	- Setup views to serve this data
 	- Collect time deltas per user of when the last data was pulled
@@ -113,7 +114,7 @@ curl -X GET "https://cardinal.citruscircuits.org/cardinal/api/generate/calc_tba_
 	- Where will we host this web server
 		note: this isn't as time-sensitive as development
 
-#### 6. Help frontend integrate this API into Viewer.
+#### 6. Help frontend integrate this API into Viewer. <b>(Currently here)</b>
 	- Create documentation on the API and it's proper use
 	- Support the Viewer's developers in their implementation efforts
 
