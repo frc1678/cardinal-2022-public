@@ -6,3 +6,4 @@ pymongo==3.10.1
 PyYAML==5.4.1
 black==21.9b0 
 uritemplate
+termcolor==1.1.0
