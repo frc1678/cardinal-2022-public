@@ -1,4 +1,5 @@
 """All the "main" cardinal functionality should go here."""
+import json
 from typing import List, Dict
 
 COLLECTIONS = [
@@ -61,11 +62,11 @@ To get a list of supported collections, look at /api/supported-collections/"
 
 def get_match_schedule(comp_code: str):
     # TODO: return the actual match schedule
-    with open("cardinal/api/hardcoded_test_data/match_schedule.csv") as file:
-        return file.read()
+    with open("cardinal/api/hardcoded_test_data/match_schedule.json") as file:
+        return json.load(file)
 
 
 def get_teams_list(comp_code: str):
     # TODO: Get the actual teams list
-    with open("cardinal/api/hardcoded_test_data/team_list.csv") as file:
-        return file.read()
+    with open("cardinal/api/hardcoded_test_data/team_list.json") as file:
+        return json.load(file)
