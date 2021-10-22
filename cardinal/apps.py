@@ -19,4 +19,4 @@ class CardinalAPIConfig(AppConfig):
             exit(1)
 
         cdr.CLIENT = pymongo.MongoClient(cdr.CONNECTION_STR.format(password), cdr.PORT)
-        cdr.DB = cdr.CLIENT["test2020caln"]
+        cdr.DB = cdr.CLIENT["2021cc"]
