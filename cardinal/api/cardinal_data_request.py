@@ -1,6 +1,7 @@
 """All the "main" cardinal functionality should go here."""
 import json
 from typing import List, Dict
+from pathlib import Path
 
 COLLECTIONS = [
     "obj_pit_collection",
@@ -61,12 +62,22 @@ To get a list of supported collections, look at /api/supported-collections/"
 
 
 def get_match_schedule(comp_code: str):
-    # TODO: return the actual match schedule
-    with open("cardinal/api/hardcoded_test_data/match_schedule.json") as file:
-        return json.load(file)
+    name = "static_viewer_files/{}_match_schedule.json"
+    full_name = name.format(comp_code)
+
+    if Path(full_name).exists():
+        with open(full_name) as file:
+            return json.load(file)
+    else:
+        return f"Error, no file called {full_name}"
 
 
 def get_teams_list(comp_code: str):
-    # TODO: Get the actual teams list
-    with open("cardinal/api/hardcoded_test_data/team_list.json") as file:
-        return json.load(file)
+    name = "static_viewer_files/{}_team_list.json"
+    full_name = name.format(comp_code)
+
+    if Path(full_name).exists():
+        with open(full_name) as file:
+            return json.load(file)
+    else:
+        return f"Error, no file called {full_name}"
