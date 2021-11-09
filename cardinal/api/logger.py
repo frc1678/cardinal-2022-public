@@ -38,13 +38,10 @@ def logger(cself, request, fn, *args, **kwargs):
     # (classname).get -> ['classname', 'get'] -> 'classname'
     calling_class = name.split(".")[0]
     args_string = (
-        "\n".join(("\t" + str(arg)) for arg in args) + "\n"
-        if len(args) != 0
-        else "[no arguments]"
+        "\n".join(("\t" + str(arg)) for arg in args) + "\n" if len(args) != 0 else "[no arguments]"
     )
     kwargs_string = (
-        "\n".join(("\t" + f"{arg} : '{str(kwargs[arg])}'") for arg in kwargs.keys())
-        + "\n"
+        "\n".join(("\t" + f"{arg} : '{str(kwargs[arg])}'") for arg in kwargs.keys()) + "\n"
         if len(kwargs.keys()) != 0
         else "[no arguments]"
     )
