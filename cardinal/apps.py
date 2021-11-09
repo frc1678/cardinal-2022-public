@@ -12,9 +12,7 @@ class CardinalAPIConfig(AppConfig):
     name = "cardinal"
 
     commit = (
-        subprocess.check_output(["git", "rev-parse", "--short", "HEAD"])
-        .decode("ascii")
-        .strip()
+        subprocess.check_output(["git", "rev-parse", "--short", "HEAD"]).decode("ascii").strip()
     )
 
     log(f"Started Cardinal at {datetime.now()}", Severity.DEBUG)
