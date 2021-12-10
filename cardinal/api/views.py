@@ -18,7 +18,7 @@ CARDINAL_EMOJI = "🐦"
 
 
 class VersionApiView(APIView):
-    permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.IsAuthenticated]
 
     @request_logged
     def get(self, request, *args, **kwargs):
@@ -26,7 +26,7 @@ class VersionApiView(APIView):
 
 
 class InitialApiView(APIView):
-    permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.IsAuthenticated]
 
     @request_logged
     def get(self, request, *args, **kwargs):
@@ -35,7 +35,7 @@ class InitialApiView(APIView):
 
 
 class CollectionDataRequestApiView(APIView):
-    permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.IsAuthenticated]
 
     @request_logged
     def get(self, request, *args, **kwargs):
@@ -60,7 +60,7 @@ class CollectionDataRequestApiView(APIView):
 
 
 class SupportedCollectionsApiView(APIView):
-    permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.IsAuthenticated]
 
     @request_logged
     def get(self, request, *args, **kwargs):
@@ -68,7 +68,7 @@ class SupportedCollectionsApiView(APIView):
 
 
 class TestDataGeneratorApiView(APIView):
-    permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.IsAuthenticated]
 
     @request_logged
     def get(self, request, *args, **kwargs):
@@ -90,7 +90,7 @@ class TestDataGeneratorApiView(APIView):
 
 
 class MatchScheduleApiView(APIView):
-    permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.IsAuthenticated]
 
     @request_logged
     def get(self, request, *args, **kwargs):
@@ -101,7 +101,7 @@ class MatchScheduleApiView(APIView):
 
 
 class TeamsListApiView(APIView):
-    permission_classes = [permissions.AllowAny]
+    permission_classes = [permissions.IsAuthenticated]
 
     @request_logged
     def get(self, request, *args, **kwargs):
