@@ -59,6 +59,11 @@ Query params:
     log_file.close()
 
 
+def write_log(message: str):
+    with open(_FILE_PATH, "a") as log_file:
+        log_file.write(message)
+
+
 class Severity(Enum):
     INFO = 0
     WARN = 1
@@ -86,6 +91,7 @@ def log(message: str, severity: Severity):
         message_type = colored(message_type.lower(), "blue")
 
     message = f"{message_type}: {message}"
+    write_log(f"{message}\n")
     print(message)
 
     # Quit the program if the severity is fatal
