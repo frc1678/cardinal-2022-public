@@ -2,6 +2,7 @@
 import json
 from typing import List, Dict
 from pathlib import Path
+from pymongo import MongoClient, database
 
 COLLECTIONS = [
     "obj_pit_collection",
@@ -36,8 +37,8 @@ CONNECTION_STR = "mongodb+srv://cardinal-web-server:{}@scouting-system-3das1.gcp
 PORT = 27017
 
 
-CLIENT = None
-DB = None
+CLIENT: MongoClient = None
+DB: database.Database = None
 
 
 def serialize_documents(docs) -> List[Dict]:
@@ -60,6 +61,18 @@ To get a list of supported collections, look at /api/supported-collections/"
 
     return serialize_documents(DB[collection_name].find())
 
+def create_or_update_notes(team_number: str, notes: str):
+    """Create or update a team's notes in the database."""
+    notes_collection = DB["notes"]
+    return notes_collection.update_one({"team_number": team_number}, {"$set": {"notes": notes}}, upsert=True).acknowledged
+
+def get_notes(team_number: str):
+    """Get a team's notes from the database."""
+    notes_collection = DB["notes"]
+    notes = notes_collection.find_one({"team_number": team_number})
+    if notes is None:
+        return ""
+    return notes["notes"]
 
 def get_match_schedule(comp_code: str):
     name = "static_viewer_files/{}_match_schedule.json"
