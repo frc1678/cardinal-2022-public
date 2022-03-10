@@ -63,12 +63,12 @@ To get a list of supported collections, look at /api/supported-collections/"
 
 def create_or_update_notes(team_number: str, notes: str):
     """Create or update a team's notes in the database."""
-    notes_collection = DB["notes"]
+    notes_collection = DB["strategist-notes"]
     return notes_collection.update_one({"team_number": team_number}, {"$set": {"notes": notes}}, upsert=True).acknowledged
 
 def get_notes(team_number: str):
     """Get a team's notes from the database."""
-    notes_collection = DB["notes"]
+    notes_collection = DB["strategist-notes"]
     notes = notes_collection.find_one({"team_number": team_number})
     if notes is None:
         return ""
