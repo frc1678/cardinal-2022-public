@@ -74,6 +74,11 @@ def get_notes(team_number: str):
         return ""
     return notes["notes"]
 
+def get_all_notes():
+    """Get all notes from the database"""
+    notes_collection = DB["strategist-notes"]
+    return serialize_documents(notes_collection.find())
+
 def get_match_schedule(comp_code: str):
     name = "static_viewer_files/{}_match_schedule.json"
     full_name = name.format(comp_code)

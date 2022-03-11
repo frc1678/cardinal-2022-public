@@ -68,6 +68,9 @@ class GetNotesApiView(APIView):
         team_number: Optional[str] = kwargs["team_number"]
         if (team_number is None) or (team_number == ""):
             return Response({"success": False, "message": "No team number provided."}, status=status.HTTP_400_BAD_REQUEST)
+        if team_number == "all":
+            return Response(cardinal_data_request.get_all_notes(), status=status.HTTP_200_OK)
+        
         if not team_number.isnumeric():
             return Response({"success": False, "message": "Team number must be numeric."}, status=status.HTTP_400_BAD_REQUEST)
 
