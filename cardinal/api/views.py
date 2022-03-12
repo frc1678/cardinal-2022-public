@@ -82,7 +82,7 @@ class SetNotesApiView(APIView):
 
     @request_logged
     def post(self, request: Request, *args, **kwargs):
-        if (not request.data) or (not request.data.get("team_number")) or (not request.data.get("notes")):
+        if (not request.data) or (not request.data.get("team_number")) or (request.data.get("notes") == None):
             return Response(
                 "Missing team_number or notes in request body.",
                 status=status.HTTP_400_BAD_REQUEST,
