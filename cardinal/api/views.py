@@ -1,4 +1,5 @@
 from pathlib import Path
+from typing import Optional
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -9,6 +10,7 @@ from cardinal.api import cardinal_data_request
 from .generate_test_data import DataGenerator
 from .logger import request_logged
 from rest_framework import permissions
+from rest_framework.request import Request
 from pathlib import Path
 from cardinal.api import CARDINAL_VERSION
 from .logger import _FILE_PATH, request_logged
@@ -58,6 +60,38 @@ class CollectionDataRequestApiView(APIView):
 
         return Response(data, status=status.HTTP_200_OK)
 
+class GetNotesApiView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    @request_logged
+    def get(self, request, *args, **kwargs):
+        team_number: Optional[str] = kwargs["team_number"]
+        if (team_number is None) or (team_number == ""):
+            return Response({"success": False, "message": "No team number provided."}, status=status.HTTP_400_BAD_REQUEST)
+        if team_number == "all":
+            return Response(cardinal_data_request.get_all_notes(), status=status.HTTP_200_OK)
+        
+        if not team_number.isnumeric():
+            return Response({"success": False, "message": "Team number must be numeric."}, status=status.HTTP_400_BAD_REQUEST)
+
+        team_number = kwargs["team_number"]
+        return Response({"success": True, "notes": cardinal_data_request.get_notes(team_number)})
+
+class SetNotesApiView(APIView):
+    permission_classes = [permissions.IsAuthenticated]
+
+    @request_logged
+    def post(self, request: Request, *args, **kwargs):
+        if (not request.data) or (not request.data.get("team_number")) or (request.data.get("notes") == None):
+            return Response(
+                "Missing team_number or notes in request body.",
+                status=status.HTTP_400_BAD_REQUEST,
+            )
+        team_number = request.data.get("team_number")
+        if not team_number.isnumeric():
+          return Response({"success": False, "message": "Team number must be numeric."}, status=status.HTTP_400_BAD_REQUEST)
+        notes = request.data.get("notes")
+        return Response({"success": cardinal_data_request.create_or_update_notes(team_number, notes)})
 
 class SupportedCollectionsApiView(APIView):
     permission_classes = [permissions.IsAuthenticated]

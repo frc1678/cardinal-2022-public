@@ -1,7 +1,9 @@
 from django.conf.urls import url
 from django.urls import path, include
 from .views import (
+    GetNotesApiView,
     InitialApiView,
+    SetNotesApiView,
     TestDataGeneratorApiView,
     CollectionDataRequestApiView,
     TestDataGeneratorApiView,
@@ -46,4 +48,6 @@ urlpatterns = [
     path("match-schedule/<str:comp_code>/", MatchScheduleApiView.as_view()),
     path("teams-list/<str:comp_code>/", TeamsListApiView.as_view()),
     path("log-file/", LogFileApiView.as_view()),
+    path("notes/<str:team_number>/", GetNotesApiView.as_view()),
+    path("notes/", SetNotesApiView.as_view()),
 ]
